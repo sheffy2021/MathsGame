@@ -285,15 +285,14 @@ select{
         width: 40px;
         height: 40px;}
 
+       
+        .container-game{
+            height: 310px;}
+            
     .start-reset{
-        margin-right: 10%;}
-
-.container-game{
-    height: 310px;}
-
-    .start-reset{
+        margin-right: 17%;
         font-size: 13px;
-        font-weight: 500
+        font-weight: 500;
     }
 
     .correct, .wrong{
