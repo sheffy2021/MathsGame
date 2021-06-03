@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>maths game</title>
+</head>
+<body>
+    <section class="section-game">
+        <div class="container-game">
+            <div class="correct-wrong-container">
+                <div class="correct" id="correct">
+                    Correct
+                </div>
+                <div class="wrong" id="wrong">
+                    Try again
+                </div>
+            </div>
+            <div class="score-wrapper">
+                <div class="score">
+                    <p>Score: <span class="score-value" id="score-value">0</span></p>
+                </div>
+            </div>
+            <div class="level-container">
+                <label for="level">Lvl:</label>
+                <select class="level" id="level" name="level">
+                    <option id="bg">Bg</option>
+                    <option id="adv">Adv</option>
+                    <option id="pro">Pro</option>
+                </select>
+                <div id="level-text">
+
+                    <span id="bg-highest-score">52</span>
+                    <span id="adv-highest-score">45</span>
+                    <span id="pro-highest-score">40</span>
+                </div>            
+            </div>
+            <div class="question" id="question">
+                
+            </div>
+            <div class="instruction">
+                Click on the correct anwser
+            </div>
+            <div class="choices">
+                <div class="box" id="box1"></div>
+                <div class="box" id="box2"></div>
+                <div class="box" id="box3"></div>
+                <div class="box" id="box4"></div>
+            </div>
+            <div class="start-time-container">
+            <div class="start-reset" id="start-reset">
+                Start Game
+            </div>
+            <div class="time-left" id="time-left">
+                Time-left: <span id="time-value">60</span> sec
+            </div>
+            </div>
+            <div class="game-over" id="game-over">
+                
+            </div>
+            <div class="congratulations" id="congratulations">
+                
+            </div>
+        </div>
+    </section>
+
+
+    <script src="./index.js"></script>
+</body>
+</html>

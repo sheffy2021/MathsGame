@@ -1,0 +1,317 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    background: radial-gradient(circle, #fff, #ccc);
+}
+
+.container-game{
+    height: 400px;
+    width: 550px;
+    background: rgba(156, 141, 255, 0.753);
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 0px rgba(72, 65, 117, 0.753);
+    position: relative;
+}
+
+.score-wrapper{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.score{
+    padding: 8px;
+    background: rgb(247, 184, 67);
+    color: rgb(71, 71, 71);
+    box-shadow: 0 4px 0px rgb(131, 98, 34);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.correct-wrong-container{
+    position: absolute;
+}
+
+.correct{
+    position: absolute;
+    left: 210px;
+    background: rgb(120, 187, 20);
+    color: white;
+    padding: 10px;
+    display: none;
+}
+
+.wrong{
+    position: absolute;
+    left: 210px;
+    background: rgb(187, 81, 20);
+    color: white;
+    padding: 8px;
+    width: 80px;
+    display: none;
+}
+
+.question{
+    height: 120px;
+    width: 350px;
+    background: rgba(82, 70, 161, 0.753);
+    box-shadow: 0 4px 0px rgba(39, 33, 77, 0.753);
+    margin: 10px auto;
+    font-size: 100px;
+    text-align: center;
+    line-height: 120px;
+    font-family: cursive, sans-serif;
+}
+
+.level-container{
+    padding-top: 4px;
+    display: flex;
+    justify-content: flex-start;
+    /* width: 35px; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    color: rgb(0, 13, 128);
+    font-weight: bold;
+}
+
+#level-text{
+    display: none;
+}
+
+.level-container label{
+    padding-right: 4px;
+    font-weight: 500;
+}
+
+select{
+    color: rgb(0, 13, 128);
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.instruction{
+    height: 40px;
+    width: 350px;
+    background: rgba(147, 84, 206, 0.753);
+    box-shadow: 0 4px 0px rgba(69, 39, 97, 0.753);
+    margin: 10px auto;
+    text-align: center;
+    line-height: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.choices{
+    width: 350px;
+    margin: 5px auto 15px auto;
+    text-align: center;
+    line-height: 75px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box{
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.158);
+    position: relative;
+    transition: all 0.2s;
+}
+
+.box:hover, .start-reset:hover{
+    color: white;
+    background: rgba(113, 97, 221, 0.753); 
+    box-shadow: 0px 4px 0px rgba(44, 38, 87, 0.753);
+}
+
+.box:active, .start-reset:active{
+    background: rgba(113, 97, 221, 0.753);
+    box-shadow: 0px 0px 0px rgba(44, 38, 87, 0.753);
+    top: 4px;
+}
+
+.start-time-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.start-reset{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-right: 18%;
+    padding: 4px 8px;
+    background: rgba(255, 255, 255, 0.568);
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.158);
+    position: relative;
+    transition: all 0.2s;
+}
+
+.time-left{
+    width: 120px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 22px;
+    padding: 2px 8px;
+    background: rgba(186, 255, 24, 0.534);
+    color: rgb(71, 71, 71);
+    box-shadow: 0 4px 0px rgba(92, 131, 2, 0.534);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    visibility: hidden;
+}
+
+.game-over p{
+    padding: 10px;}
+
+.game-over{
+    padding: 40px;
+    position: absolute;
+    top: 90px;
+    left: 55px;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    line-height: 20px;
+    text-transform: uppercase;
+    padding-top: 20px;
+    height: 45%;
+    width: 80%;
+    background: linear-gradient(rgb(255, 193, 164), rgb(255, 115, 0));
+    z-index: 2;
+    display: none;
+}
+
+.congratulations{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 90px;
+    left: 55px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    /* line-height: 10px; */
+    text-transform: uppercase;
+    padding-top: 20px;
+    height: 45%;
+    width: 80%;
+    background: linear-gradient(rgb(255, 193, 164), rgb(255, 115, 0));
+    z-index: 2;
+    display: none;
+}
+
+
+@media(max-width:600px){
+    .container-game{
+        height: 400px;
+        width: 95%;
+        
+    }
+    .question{
+        height: 120px;
+        width: 350px;
+    }
+    
+    .instruction{
+        height: 40px;
+        width: 350px;
+        text-align: center;
+        
+    }
+
+    .correct, .wrong{
+        left: 150px;
+        padding: 5px;}
+
+        .game-over{
+            top: 80px;
+            left: 18px;
+            width: 90%;
+        }
+        
+        .congratulations{
+            top: 80px;
+            left: 18px;
+            width: 90%;
+        }
+        
+
+}
+
+@media(max-width:450px){
+    .container-game{
+        height: 60vh;
+        width: 95%;
+        
+    }
+
+    .score{
+        padding: 6px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    
+    .question{
+        height: 80px;
+        width: 70%;
+        line-height: 80px;
+        font-size: 70px;
+        
+    }
+    
+    .instruction{
+        height: 40px;
+        width: 70%;
+        font-size: 12px;
+    }
+
+    .choices{
+        width: 70%;
+    }
+
+    .box{
+        line-height: 40px;
+        width: 40px;
+        height: 40px;}
+
+    .start-reset{
+        margin-right: 10%;}
+
+.container-game{
+    height: 310px;}
+
+    .start-reset{
+        font-size: 13px;
+        font-weight: 500
+    }
+
+    .correct, .wrong{
+        left: 60px;
+        padding: 5px;}
+
+        .game-over{
+            top: 80px;
+            left: 42px;
+            font-size: 15px;
+            width: 75%;}
+            
+            .congratulations{
+                
+                top: 80px;
+                left: 42px;
+                width: 75%;
+            font-size: 15px;
+        }
+
+}
